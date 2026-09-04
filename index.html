@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bravanese &harr; English Translator</title>
+<style>
+  :root { --ink:#EDE6D6; --navy:#16233B; --navy2:#0E1A2E; --gold:#C9A227; --gold-soft:#E4C767; --line:rgba(237,230,214,0.14); }
+  * { box-sizing: border-box; }
+  body { font-family: 'Iowan Old Style','Palatino Linotype',Georgia,serif; color:var(--ink); background:var(--navy2); margin:0; padding:2rem 1.25rem 3rem; min-height:100vh; }
+  h1, h2, h3 { font-family: Georgia, 'Iowan Old Style', serif; font-weight: 600; }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  .eyebrow { font-family: system-ui, sans-serif; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-soft); margin-bottom: 0.4rem; }
+  h1 { font-size: 2rem; margin: 0 0 0.35rem; }
+  .sub { font-family: system-ui, sans-serif; font-size: 0.92rem; color: rgba(237,230,214,0.66); margin: 0 0 1.75rem; line-height: 1.5; }
+  .card { background: linear-gradient(180deg, rgba(237,230,214,0.05), rgba(237,230,214,0.02)); border: 1px solid var(--line); border-radius: 6px; padding: 1.25rem 1.35rem; margin-bottom: 1.1rem; }
+  .card h3 { font-size: 0.95rem; margin: 0 0 0.75rem; color: var(--gold-soft); }
+  label { display:block; font-family: system-ui, sans-serif; font-size: 0.82rem; color: rgba(237,230,214,0.75); margin-bottom: 0.35rem; }
+  input[type=file] { font-family: system-ui, sans-serif; font-size: 0.82rem; color: var(--ink); width: 100%; }
+  .filerow { display:flex; align-items:center; justify-content:space-between; gap: 0.75rem; margin-bottom: 0.85rem; }
+  .filerow:last-child { margin-bottom: 0; }
+  .status { font-family: system-ui, sans-serif; font-size: 0.78rem; padding: 0.15rem 0.55rem; border-radius: 3px; white-space: nowrap; }
+  .status.pending { background: rgba(237,230,214,0.08); color: rgba(237,230,214,0.5); }
+  .status.ok { background: rgba(62,124,122,0.25); color: #8fd6d3; }
+  .dirtabs { display:flex; gap: 0.5rem; margin-bottom: 1rem; }
+  .dirtab { flex:1; font-family: system-ui, sans-serif; font-size: 0.85rem; text-align:center; padding: 0.55rem 0.5rem; border: 1px solid var(--line); border-radius: 5px; cursor:pointer; background: transparent; color: rgba(237,230,214,0.7); }
+  .dirtab.active { border-color: var(--gold); color: var(--gold-soft); background: rgba(201,162,39,0.1); }
+  textarea { width:100%; min-height: 88px; background: rgba(0,0,0,0.18); border: 1px solid var(--line); border-radius: 5px; color: var(--ink); font-family: Georgia, serif; font-size: 1.05rem; padding: 0.75rem 0.85rem; resize: vertical; }
+  textarea:focus, button:focus-visible, .dirtab:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
+  .btnrow { display:flex; justify-content:flex-end; margin-top: 0.85rem; }
+  button.primary { font-family: system-ui, sans-serif; font-size: 0.88rem; font-weight: 600; background: var(--gold); color: #241a04; border: none; border-radius: 5px; padding: 0.65rem 1.3rem; cursor: pointer; }
+  button.primary:disabled { opacity: 0.45; cursor: default; }
+  .result { font-size: 1.2rem; line-height: 1.55; padding: 1.1rem 1.3rem; background: rgba(201,162,39,0.07); border-left: 3px solid var(--gold); border-radius: 3px; margin-top: 0.25rem; }
+  details { font-family: system-ui, sans-serif; font-size: 0.8rem; margin-top: 0.9rem; color: rgba(237,230,214,0.65); }
+  summary { cursor: pointer; color: var(--gold-soft); }
+  .ctxblock { margin-top: 0.6rem; padding: 0.7rem 0.85rem; background: rgba(0,0,0,0.2); border-radius: 4px; white-space: pre-wrap; line-height: 1.5; }
+  .loading { font-family: system-ui, sans-serif; font-size: 0.85rem; color: var(--gold-soft); display:none; }
+  .err { font-family: system-ui, sans-serif; font-size: 0.85rem; color: #e19b8f; background: rgba(200,80,60,0.12); border-radius: 4px; padding: 0.6rem 0.8rem; margin-top: 0.6rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Chimiini &middot; Bravanese</div>
+  <h1>AI-assisted translator</h1>
+  <p class="sub">Translations are produced by Claude, using a built-in Chimiini dictionary and corpus, called through a server-side function &mdash; no API key is ever sent to or stored in your browser.</p>
+
+  <div class="card">
+    <span class="status pending" id="dataStatus">Loading dictionary&hellip;</span>
+  </div>
+
+  <div class="card">
+    <h3>Translate a sentence</h3>
+    <div class="dirtabs">
+      <button type="button" class="dirtab active" id="dirB2E">Bravanese &rarr; English</button>
+      <button type="button" class="dirtab" id="dirE2B">English &rarr; Bravanese</button>
+    </div>
+    <label for="sentence" id="sentenceLabel">Bravanese sentence</label>
+    <textarea id="sentence" placeholder="Type a sentence..."></textarea>
+    <div class="btnrow">
+      <button type="button" class="primary" id="goBtn" disabled>Translate</button>
+    </div>
+    <div id="loading" class="loading">Asking Claude, using the retrieved dictionary context&hellip;</div>
+    <div id="errBox"></div>
+    <div id="resultBox"></div>
+  </div>
+</div>
+
+
+<script>
+(function(){
+  function stripDiacritics(s) {
+    if (!s) return s;
+    var repl = { 'ʰ':'', 'ʼ':"'", '’':"'", 'ʻ':"'", 'ˈ':'', 'ð':'dh', 'Ð':'Dh', 'ŋ':'ng' };
+    for (var k in repl) s = s.split(k).join(repl[k]);
+    return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+  function normalizeKey(s) {
+    if (!s) return '';
+    s = s.replace(/\(.*?\)/g, '');
+    s = s.split('-').join('');
+    s = stripDiacritics(s);
+    s = s.replace(/\s+/g, '');
+    return s.toLowerCase().trim();
+  }
+  function tokenize(s) { return (s.toLowerCase().match(/[a-z']+/g)) || []; }
+  function cleanGloss(gloss) {
+    if (!gloss) return '';
+    gloss = gloss.trim().replace(/^\([^)]*\)\s*/, '');
+    gloss = gloss.replace(/^\d+(\/\d+)?\.?\s+/, '');
+    var parts = gloss.split(/[;,(]/);
+    for (var i=0;i<parts.length;i++){ var t=parts[i].trim(); if(t) return t; }
+    return gloss.trim();
+  }
+  var STOPWORDS = {a:1,an:1,the:1,to:1,of:1,in:1,on:1,at:1,is:1,are:1,was:1,were:1,be:1,been:1,and:1,or:1,but:1,it:1,its:1,s:1,lit:1,also:1};
+
+  function Index(){
+    this.braToEng = new Map();
+    this.engToBraExact = new Map();
+    this.engToBraPartial = new Map();
+    this.phraseBraToEng = new Map();
+    this.phraseEngToBra = new Map();
+  }
+  Index.prototype.addBra = function(key, gloss, note){
+    if (!key || !gloss) return;
+    if (!this.braToEng.has(key)) this.braToEng.set(key, {gloss:gloss, note:note});
+  };
+  Index.prototype.addEng = function(gloss, braOriginal, note){
+    var words = tokenize(gloss);
+    var isSingle = words.length === 1;
+    for (var i=0;i<words.length;i++){
+      var w = words[i];
+      if (STOPWORDS[w] || w.length < 3) continue;
+      var map = isSingle ? this.engToBraExact : this.engToBraPartial;
+      if (!map.has(w)) map.set(w, []);
+      var arr = map.get(w);
+      if (!arr.some(function(e){ return e[0] === braOriginal; })) arr.push([braOriginal, note]);
+    }
+  };
+  Index.prototype.addPhrase = function(braOriginal, braAscii, english){
+    if (!braOriginal || !english) return;
+    braAscii = braAscii || stripDiacritics(braOriginal);
+    var engKey = english.toLowerCase().replace(/[^a-z0-9 ]/g,'').trim();
+    var braKey = braAscii.toLowerCase().trim();
+    if (braKey && !this.phraseBraToEng.has(braKey)) this.phraseBraToEng.set(braKey, english);
+    if (engKey && !this.phraseEngToBra.has(engKey)) this.phraseEngToBra.set(engKey, braOriginal);
+  };
+  Index.prototype.build = function(lexicon, parallelRows){
+    for (var i=0;i<lexicon.length;i++){
+      var e = lexicon[i];
+      var headwordOriginal = e.headword_original || '';
+      var headwordKey = normalizeKey(headwordOriginal);
+      var gloss = cleanGloss(e.gloss || '');
+      if (headwordKey && gloss){ this.addBra(headwordKey, gloss, ''); this.addEng(gloss, headwordOriginal, ''); }
+      if (e.plural_form) this.addBra(normalizeKey(e.plural_form), gloss, '(plural)');
+      if (e.past_tense) this.addBra(normalizeKey(e.past_tense), gloss, '(past tense)');
+      var rels = e.related_forms || [];
+      for (var j=0;j<rels.length;j++){
+        var rel = rels[j];
+        var form = rel.form_raw || rel.form;
+        if (!form) continue;
+        var relGloss = cleanGloss(rel.gloss || '') || gloss;
+        var deriv = rel.derivation || [];
+        var note = deriv.length ? ('('+deriv.join('/')+')') : '';
+        if (relGloss) this.addBra(normalizeKey(form), relGloss, note);
+        if (rel.past_tense) this.addBra(normalizeKey(rel.past_tense), relGloss, '(past tense)');
+      }
+      var exs = e.examples || [];
+      for (var k=0;k<exs.length;k++) this.addPhrase(exs[k].bravanese_original, exs[k].bravanese_ascii, exs[k].english);
+    }
+    for (var p=0;p<parallelRows.length;p++){
+      this.addPhrase(parallelRows[p].bravanese_original, parallelRows[p].bravanese_ascii, parallelRows[p].english);
+    }
+  };
+  Index.prototype.closestExamples = function(tokens, direction, n){
+    var map = direction === 'b2e' ? this.phraseBraToEng : this.phraseEngToBra;
+    var scored = [];
+    var tokenSet = new Set(tokens);
+    map.forEach(function(val, key){
+      var keyTokens = tokenize(key);
+      var overlap = 0;
+      for (var i=0;i<keyTokens.length;i++) if (tokenSet.has(keyTokens[i])) overlap++;
+      if (overlap > 0) scored.push([overlap / Math.max(keyTokens.length, tokens.length), key, val]);
+    });
+    scored.sort(function(a,b){ return b[0]-a[0]; });
+    return scored.slice(0, n);
+  };
+  Index.prototype.buildContext = function(sentence, direction){
+    var tokens = direction === 'b2e' ? tokenize(stripDiacritics(sentence)) : tokenize(sentence);
+    var lexLines = [];
+    var unknown = [];
+    var self = this;
+    if (direction === 'b2e'){
+      tokens.forEach(function(t){
+        var hit = self.braToEng.get(normalizeKey(t));
+        if (hit) lexLines.push(t + ' = "' + hit.gloss + '" ' + hit.note);
+        else unknown.push(t);
+      });
+    } else {
+      tokens.forEach(function(t){
+        if (STOPWORDS[t]) return;
+        var hits = self.engToBraExact.get(t) || self.engToBraPartial.get(t);
+        if (hits && hits.length){
+          var shown = hits.slice(0,3).map(function(h){ return h[0] + (h[1] ? ' '+h[1] : ''); });
+          lexLines.push(t + ' = ' + shown.join(' / '));
+        } else unknown.push(t);
+      });
+    }
+    var examples = this.closestExamples(tokens, direction, 5);
+    return { lexLines: lexLines, unknown: unknown, examples: examples };
+  };
+
+  var GRAMMAR_NOTES = [
+    "Chimiini (Bravanese) noun classes, from the dictionary's own conventions:",
+    "Class 1/2: people, animals, animate beings (e.g. muke 'woman' / wake 'women'). The class 1 prefix is full mu- only on monosyllabic stems or stems with an initial consonant cluster (muke, mubli); otherwise it reduces to m- (e.g. m-tooro 'thief').",
+    "Class 3/4: inanimate, m-/mu- singular, mi- plural (e.g. muti 'tree' / miti 'trees').",
+    "Class 5/6: i- singular (often augmentative), ma- plural (e.g. ijiwe 'stone' / majiwe 'stones').",
+    "Class 7/8: chi- singular (often diminutive), z(i)- plural (e.g. chiti 'chair' / ziti 'chairs').",
+    "Class 9/10: singular and plural forms are identical (e.g. mbuzi 'goat(s)').",
+    "Class 11: l- singular, m-/n- plural (e.g. lkuta 'wall' / nkuta 'walls').",
+    "Class 14: u- prefix, abstract states/conditions/qualities, usually no plural (e.g. uvivo 'ripeness').",
+    "Class 15: verbal nouns / infinitives, marked with ku- (or kh-/chi- variants) plus a final -a (e.g. kuviva 'to be ripe').",
+    "Definiteness ('the X') is marked by a suffix that REPLACES the noun's final vowel, based on what that final vowel is: -a -> -aani, -e -> -eeni, -i -> -iini, -o -> -ooni, -u -> -uuni. Examples: skoola 'school' -> skolaani 'the school', kazi 'work' -> kaziini 'the work', suuqu 'market' -> suuquuni 'the market'.",
+    "Possessives ('my/your/his-her/our/their X') agree with the possessed noun's class. For 1st singular, 2nd person, and 3rd singular, the possessive is a SUFFIX attached directly to the noun; for 1st plural and 3rd plural, the possessive is a SEPARATE following word. 1st singular ('my'), suffix -a: class 7 -> cha, class 15 -> ka, class 11 -> la, classes 1/2/3/14 -> wa, classes 4/5/6/9 -> ya, classes 8/10 -> za. 2nd person ('your'), suffix -o: class 7 -> cho, class 15 -> ko, class 11 -> lo, classes 1/2/3/14 -> wo, classes 4/5/6/9 -> yo, classes 8/10 -> zo. 3rd singular ('his/her'), suffix -e: class 7 -> che, classes 15/17 -> ke, class 11 -> le, classes 1/2/3/14 -> we, classes 4/5/6/9 -> ye, classes 8/10 -> ze. 1st plural ('our'), separate word ending in -iitu: classes 1/2/14 -> wiitu, class 9 -> yiitu, classes 8/10 -> ziitu, class 17 (locative, 'place') -> kiitu (following its own k- pattern like ka/ko/ke/kaawo elsewhere, NOT grouped with class 15), all other classes (3, 4, 5, 6, 7, 11, 15) -> ndiitu (not the same class-consonant pattern as the other persons -- most classes take the fixed form ndiitu here). kiitu 'our place' and kaawo 'their place' (class 17, locative) can refer to any place -- a house or anywhere else -- not just a home specifically. 3rd plural ('their'), separate word ending in -aawo: class 7 -> chaawo, classes 15/17 -> kaawo, class 11 -> laawo, classes 1/2/3/14 -> waawo, classes 4/5/6/9 -> yaawo, classes 8/10 -> zaawo.",
+    "Verb extensions (stack onto the CVC root, roughly extension-causative-reciprocal in order): causative is -ish/-esh (ku-waandra 'get fat' -> ku-waandrisha 'fatten'); stems ending in -uk/-ok mutate the k to sh instead (k-oondroka 'wake up' -> k-oondrosha 'wake s.o. up'). Applied (benefactive/instrumental/directional) is -il/-el, or -iliz/-elez combined with causative. Reciprocal is -an- (ku-'ahidana 'promise one another'), and stacks freely onto applied stems (kh-pikilana 'cook for one another'). A common transitive/causative/intransitive triplet is root+il/el (transitive), root+iz/ez (transitive-causative), root+ik/ek (intransitive); the same pattern recurs as ul/ol, uz/oz, uk/ok, with vowel harmony (high i/u vs mid e/o) picked by the root's final vowel. Some Somali-derived roots take a semantically-empty -at- extension directly on the root.",
+    "Tense/mood is built from subject-prefix + auxiliary/marker + stem, not just a past-tense suffix: infinitive is ku-stem-a (becomes kh- before a voiceless-obstruent-initial stem, is dropped before a stem already starting kh-/q-, and lengthens/merges with a vowel-initial stem, e.g. k-aala 'to plant'). Affirmative habitual is invariant hu-stem-a with no subject agreement (hu-biga 'x hits'). The chi- subject prefix marks 3rd person narrative/continuous past in storytelling. Ordinary past tense commonly ends in an -ile/-iile suffix on the verb stem. Negative tenses use a distinct negative subject-prefix set that varies by tense (present, past, future, habitual, imperative, subjunctive each have their own negative paradigm). The copula is irregular: present ni (affirmative) / siwo (negative), invariant; future is SubjectPrefix-taa-ku-wa; past is SubjectPrefix-waaliko. Possession ('have') uses SubjectPrefix-na-cho/na-ye/etc. + the possessed noun, not a separate verb.",
+    "Separate from that, there is a LOCATIVE copula ('to be at/in/on [a place]'), built from the root -ko, with a -pi suffix added for 'where' questions. Attested forms -- note several are homophonous across person/class, so context or an explicit subject is needed to disambiguate: 1st singular: niiko 'I am at' (negative siiko 'I am not at'). 2nd singular: uko 'you are at' (homophonous with 3rd singular). 3rd singular (person): uko 'he/she is at' (negative ntaako). 1st plural: chiiko 'we are at' (negative ntachiiko; where-question chikopi 'where are we'; homophonous with the class 7 form below). 2nd plural: niiko 'you (pl.) are at' (homophonous with 1st singular; where-question niikopi 'where are you (pl.)'). 3rd plural (people): waako 'they are at' (negative ntawaako; where-question waakopi 'where are they'). Noun-class locative forms ('it/they [class] is/are at'): class 3 -> wiiko/wuuko (where-question wuukopi); class 4/6 -> yaako (where-question yaakopi); class 5/9 -> yiiko (where-question yiikopi); class 7 -> chiiko (negative ntachiiko; homophonous with 1st plural above); class 8/10 -> ziiko (where-question ziikopi); class 11 -> liiko (where-question liikopi).",
+    "These are general patterns, not exhaustive rules -- prefer the specific lexicon entries and example sentences provided below over these generalizations whenever they conflict."
+  ].join(' ');
+
+  var idx = new Index();
+  var currentDir = 'b2e';
+
+  function setDataStatus(ok, text){
+    var el = document.getElementById('dataStatus');
+    el.className = 'status ' + (ok ? 'ok' : 'pending');
+    el.textContent = text;
+  }
+
+  Promise.all([
+    fetch('lexicon.json').then(function(r){
+      if (!r.ok) throw new Error('lexicon.json: HTTP ' + r.status);
+      return r.json();
+    }),
+    fetch('parallel_sentences.jsonl').then(function(r){
+      if (!r.ok) throw new Error('parallel_sentences.jsonl: HTTP ' + r.status);
+      return r.text();
+    }).then(function(text){
+      return text.split('\n').filter(function(l){ return l.trim(); }).map(function(l){ return JSON.parse(l); });
+    })
+  ]).then(function(results){
+    var lexicon = results[0];
+    var rows = results[1];
+    idx.build(lexicon, rows);
+    setDataStatus(true, lexicon.length + ' entries, ' + rows.length + ' example pairs loaded');
+    document.getElementById('goBtn').disabled = false;
+  }).catch(function(err){
+    setDataStatus(false, 'Failed to load dictionary data: ' + err.message);
+  });
+
+  document.getElementById('dirB2E').addEventListener('click', function(){
+    currentDir = 'b2e';
+    document.getElementById('dirB2E').classList.add('active');
+    document.getElementById('dirE2B').classList.remove('active');
+    document.getElementById('sentenceLabel').textContent = 'Bravanese sentence';
+    document.getElementById('sentence').placeholder = 'Type a Bravanese sentence...';
+  });
+  document.getElementById('dirE2B').addEventListener('click', function(){
+    currentDir = 'e2b';
+    document.getElementById('dirE2B').classList.add('active');
+    document.getElementById('dirB2E').classList.remove('active');
+    document.getElementById('sentenceLabel').textContent = 'English sentence';
+    document.getElementById('sentence').placeholder = 'Type an English sentence...';
+  });
+
+  document.getElementById('goBtn').addEventListener('click', function(){
+    var sentence = document.getElementById('sentence').value.trim();
+    var errBox = document.getElementById('errBox');
+    var resultBox = document.getElementById('resultBox');
+    errBox.innerHTML = '';
+    resultBox.innerHTML = '';
+    if (!sentence) return;
+
+    var ctx = idx.buildContext(sentence, currentDir);
+    var dirLabel = currentDir === 'b2e' ? 'Chimiini/Bravanese into natural English' : 'English into Chimiini/Bravanese';
+
+    var promptParts = [];
+    promptParts.push('You are a linguistic assistant helping translate ' + dirLabel + '.');
+    promptParts.push('Use the dictionary matches and example sentences below as ground truth for vocabulary and grammar -- they come directly from a real Chimiini/Bravanese dictionary and corpus, retrieved specifically for this sentence.');
+    promptParts.push('If a word in the input has no matching lexicon entry below, say so explicitly in your answer rather than inventing a translation for it.');
+    promptParts.push('');
+    promptParts.push('GRAMMAR BACKGROUND: ' + GRAMMAR_NOTES);
+    promptParts.push('');
+    promptParts.push('DICTIONARY MATCHES for words in this sentence:');
+    promptParts.push(ctx.lexLines.length ? ctx.lexLines.join('\n') : '(none found)');
+    if (ctx.unknown.length) promptParts.push('\nWords with NO dictionary match: ' + ctx.unknown.join(', '));
+    promptParts.push('\nRELEVANT EXAMPLE SENTENCES from the corpus (for grammar/word-order reference):');
+    promptParts.push(ctx.examples.length ? ctx.examples.map(function(e){ return (e[1] + '  =  ' + e[2]); }).join('\n') : '(none found)');
+    promptParts.push('');
+    promptParts.push('SENTENCE TO TRANSLATE: "' + sentence + '"');
+    promptParts.push('');
+    promptParts.push('Give: 1) your best translation, 2) a one-sentence note on any word you could not ground in the dictionary matches above, if any. Keep it concise.');
+
+    var loading = document.getElementById('loading');
+    loading.style.display = 'block';
+    document.getElementById('goBtn').disabled = true;
+
+    fetch('/.netlify/functions/translate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prompt: promptParts.join('\n') })
+    }).then(function(r){ return r.json().then(function(data){ return { ok: r.ok, status: r.status, data: data }; }); })
+      .then(function(result){
+      loading.style.display = 'none';
+      document.getElementById('goBtn').disabled = false;
+      if (!result.ok) {
+        var msg = (result.data && result.data.error) ? result.data.error : ('Request failed (status ' + result.status + ')');
+        errBox.innerHTML = '<div class="err">' + msg + '</div>';
+        return;
+      }
+      var textBlocks = (result.data.content || []).filter(function(b){ return b.type === 'text'; }).map(function(b){ return b.text; });
+      if (!textBlocks.length){
+        errBox.innerHTML = '<div class="err">No response text came back.</div>';
+        return;
+      }
+      var answer = textBlocks.join('\n');
+      var html = '<div class="result">' + answer.replace(/\n/g,'<br>') + '</div>';
+      html += '<details><summary>See the dictionary context used for this translation</summary>';
+      html += '<div class="ctxblock">' + promptParts.join('\n').replace(/</g,'&lt;') + '</div></details>';
+      resultBox.innerHTML = html;
+    }).catch(function(err){
+      loading.style.display = 'none';
+      document.getElementById('goBtn').disabled = false;
+      errBox.innerHTML = '<div class="err">Request failed: ' + err.message + '</div>';
+    });
+  });
+})();
+</script>
+</body>
+</html>
