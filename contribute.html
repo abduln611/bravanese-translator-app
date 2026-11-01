@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Chimiini lexicon entries</title>
+<style>
+  :root { --ink:#EDE6D6; --navy:#16233B; --navy2:#0E1A2E; --gold:#C9A227; --gold-soft:#E4C767; --line:rgba(237,230,214,0.14); }
+  * { box-sizing: border-box; }
+  body { font-family: 'Iowan Old Style','Palatino Linotype',Georgia,serif; color:var(--ink); background:var(--navy2); margin:0; padding:2rem 1.25rem 3rem; }
+  h1, h2, h3 { font-family: Georgia, 'Iowan Old Style', serif; font-weight: 600; }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  .eyebrow { font-family: system-ui, sans-serif; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-soft); margin-bottom: 0.4rem; }
+  h1 { font-size: 1.8rem; margin: 0 0 0.35rem; }
+  .sub { font-family: system-ui, sans-serif; font-size: 0.88rem; color: rgba(237,230,214,0.66); margin: 0 0 1.5rem; line-height: 1.5; }
+  .card { background: linear-gradient(180deg, rgba(237,230,214,0.05), rgba(237,230,214,0.02)); border: 1px solid var(--line); border-radius: 6px; padding: 1.25rem 1.35rem; margin-bottom: 1.1rem; }
+  .card h3 { font-size: 0.95rem; margin: 0 0 0.9rem; color: var(--gold-soft); }
+  label { display:block; font-family: system-ui, sans-serif; font-size: 0.82rem; color: rgba(237,230,214,0.75); margin: 0.7rem 0 0.3rem; }
+  label:first-child { margin-top: 0; }
+  input[type=text], select, textarea { width:100%; background: rgba(0,0,0,0.18); border: 1px solid var(--line); border-radius: 5px; color: var(--ink); font-family: Georgia, serif; font-size: 1rem; padding: 0.55rem 0.7rem; }
+  select { font-family: system-ui, sans-serif; font-size: 0.88rem; }
+  textarea { min-height: 60px; resize: vertical; }
+  input:focus, select:focus, textarea:focus, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
+  .row2 { display:grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+  .checkrow { display:flex; align-items:center; gap: 0.5rem; margin-top: 0.9rem; font-family: system-ui, sans-serif; font-size: 0.85rem; color: rgba(237,230,214,0.8); }
+  .checkrow input { width: auto; }
+  .modetabs { display:flex; gap: 0.5rem; margin-bottom: 1rem; }
+  .modetab { flex:1; font-family: system-ui, sans-serif; font-size: 0.85rem; text-align:center; padding: 0.55rem 0.5rem; border: 1px solid var(--line); border-radius: 5px; cursor:pointer; background: transparent; color: rgba(237,230,214,0.7); }
+  .modetab.active { border-color: var(--gold); color: var(--gold-soft); background: rgba(201,162,39,0.1); }
+  button.primary { font-family: system-ui, sans-serif; font-size: 0.88rem; font-weight: 600; background: var(--gold); color: #241a04; border: none; border-radius: 5px; padding: 0.65rem 1.3rem; cursor: pointer; margin-top: 1rem; }
+  button.primary:disabled { opacity: 0.45; cursor: default; }
+  .msg { font-family: system-ui, sans-serif; font-size: 0.82rem; margin-top: 0.7rem; padding: 0.5rem 0.7rem; border-radius: 4px; display:none; }
+  .msg.ok { background: rgba(62,124,122,0.2); color: #8fd6d3; }
+  .msg.err { background: rgba(200,80,60,0.15); color: #e19b8f; }
+  .hint { font-family: system-ui, sans-serif; font-size: 0.76rem; color: rgba(237,230,214,0.5); margin-top: 0.4rem; line-height: 1.4; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Chimiini &middot; Bravanese</div>
+  <h1>Add lexicon entries</h1>
+  <p class="sub">Add new words or example sentences below. Each submission is sent to the site owner for review. Once approved, it&rsquo;s added to the lexicon and shows up in the <a href="/" style="color:var(--gold-soft)">translator</a> automatically.</p>
+
+  <div class="card">
+    <label for="submitterName">Your name (optional, just for attribution)</label>
+    <input type="text" id="submitterName" placeholder="e.g. Najib">
+
+    <div class="modetabs" style="margin-top:1rem;">
+      <button type="button" class="modetab active" id="modeWord">Add a word</button>
+      <button type="button" class="modetab" id="modeExample">Add an example sentence</button>
+    </div>
+
+    <!-- WORD FORM -->
+    <form id="wordForm" name="word-entries" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="word-entries">
+      <p hidden><label>Leave blank <input name="bot-field"></label></p>
+      <input type="hidden" name="submitted_by" id="w_submitted_by">
+
+      <label for="w_bra">Bravanese form (the headword itself)</label>
+      <input type="text" name="bravanese_form" id="w_bra" placeholder="e.g. kuzoola">
+
+      <label for="w_eng">English gloss</label>
+      <input type="text" name="english_form" id="w_eng" placeholder="e.g. to pick, gather">
+
+      <div class="checkrow">
+        <input type="checkbox" name="is_infinitive_verb" id="w_isverb" value="true">
+        <label for="w_isverb" style="margin:0;">Is this a to-infinitive verb? (e.g. kuabirisata = 'to measure')</label>
+      </div>
+
+      <div class="row2">
+        <div>
+          <label for="w_sizeclass">Augmentative / diminutive</label>
+          <select name="size_class" id="w_sizeclass">
+            <option value="">Neither</option>
+            <option value="augmentative">Augmentative</option>
+            <option value="diminutive">Diminutive</option>
+          </select>
+        </div>
+        <div>
+          <label for="w_nounclass">Noun class (leave blank if not a noun)</label>
+          <select name="noun_class" id="w_nounclass">
+            <option value="">N/A</option>
+            <option value="1/2">1/2 -- people, animals (muke/wake)</option>
+            <option value="3/4">3/4 -- m-/mu- inanimate (muti/miti)</option>
+            <option value="5/6">5/6 -- i-/ma-, often augmentative (ijiwe/majiwe)</option>
+            <option value="7/8">7/8 -- chi-/z-, often diminutive (chiti/ziti)</option>
+            <option value="9/10">9/10 -- singular = plural</option>
+            <option value="11">11 -- l-/m-,n- (lkuta/nkuta)</option>
+            <option value="14">14 -- u- abstract/state (uvivo)</option>
+            <option value="15">15 -- verbal noun/infinitive (kuviva)</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="w_pluralWrap">
+        <label for="w_plural">Plural form</label>
+        <input type="text" name="plural_form" id="w_plural" placeholder="leave blank if unknown">
+      </div>
+
+      <label for="w_past">Past tense form</label>
+      <input type="text" name="past_tense" id="w_past" placeholder="leave blank if not applicable">
+
+      <button type="submit" class="primary">Add word</button>
+      <div id="w_msg" class="msg"></div>
+    </form>
+
+    <!-- EXAMPLE FORM -->
+    <form id="exampleForm" name="example-entries" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" style="display:none;">
+      <input type="hidden" name="form-name" value="example-entries">
+      <p hidden><label>Leave blank <input name="bot-field"></label></p>
+      <input type="hidden" name="submitted_by" id="e_submitted_by">
+
+      <label for="e_bra">Bravanese sentence</label>
+      <textarea name="bravanese_sentence" id="e_bra" placeholder="e.g. Umezoola matunda."></textarea>
+
+      <label for="e_eng">English translation</label>
+      <textarea name="english_translation" id="e_eng" placeholder="e.g. He has picked the fruits."></textarea>
+
+      <label for="e_past">Past tense form used (if any)</label>
+      <input type="text" name="past_tense" id="e_past" placeholder="leave blank if not applicable">
+
+      <label for="e_headword">Headword this example belongs to (optional)</label>
+      <input type="text" name="headword_hint" id="e_headword" placeholder="e.g. kuzoola">
+      <div class="hint">Not validated here since this app doesn't have the full lexicon loaded -- it'll be matched to the lexicon entry when your submission is approved.</div>
+
+      <button type="submit" class="primary">Add example</button>
+      <div id="e_msg" class="msg"></div>
+    </form>
+  </div>
+</div>
+
+<script>
+  var modeWord = document.getElementById('modeWord');
+  var modeExample = document.getElementById('modeExample');
+  var wordForm = document.getElementById('wordForm');
+  var exampleForm = document.getElementById('exampleForm');
+
+  modeWord.addEventListener('click', function(){
+    modeWord.classList.add('active'); modeExample.classList.remove('active');
+    wordForm.style.display = ''; exampleForm.style.display = 'none';
+  });
+  modeExample.addEventListener('click', function(){
+    modeExample.classList.add('active'); modeWord.classList.remove('active');
+    exampleForm.style.display = ''; wordForm.style.display = 'none';
+  });
+
+  var nounClassSel = document.getElementById('w_nounclass');
+  var pluralWrap = document.getElementById('w_pluralWrap');
+  nounClassSel.addEventListener('change', function(){
+    var v = nounClassSel.value;
+    pluralWrap.style.display = (v === '9/10' || v === '14' || v === '15') ? 'none' : '';
+  });
+
+  function encodeForm(form){
+    var data = new FormData(form);
+    var pairs = [];
+    for (var pair of data.entries()) {
+      pairs.push(encodeURIComponent(pair[0]) + '=' + encodeURIComponent(pair[1]));
+    }
+    return pairs.join('&');
+  }
+
+  function showMsg(el, text, ok){
+    el.style.display = 'block';
+    el.className = 'msg ' + (ok ? 'ok' : 'err');
+    el.textContent = text;
+    setTimeout(function(){ el.style.display = 'none'; }, 5000);
+  }
+
+  function wireForm(form, submittedByFieldId, msgId, resetIds, isWordForm){
+    var msgEl = document.getElementById(msgId);
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      document.getElementById(submittedByFieldId).value = document.getElementById('submitterName').value.trim();
+
+      var requiredOk = isWordForm
+        ? (document.getElementById('w_bra').value.trim() && document.getElementById('w_eng').value.trim())
+        : (document.getElementById('e_bra').value.trim() && document.getElementById('e_eng').value.trim());
+      if (!requiredOk) {
+        showMsg(msgEl, 'Please fill in both required fields.', false);
+        return;
+      }
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encodeForm(form)
+      }).then(function(res){
+        if (res.ok) {
+          showMsg(msgEl, 'Submitted -- thank you! It will appear in the translator once reviewed.', true);
+          resetIds.forEach(function(id){
+            var el = document.getElementById(id);
+            if (el.type === 'checkbox') el.checked = false;
+            else el.value = '';
+          });
+          if (isWordForm) { pluralWrap.style.display = ''; }
+        } else {
+          showMsg(msgEl, 'Submission failed (status ' + res.status + '). Please try again.', false);
+        }
+      }).catch(function(err){
+        showMsg(msgEl, 'Submission failed: ' + err.message, false);
+      });
+    });
+  }
+
+  wireForm(wordForm, 'w_submitted_by', 'w_msg', ['w_bra','w_eng','w_isverb','w_sizeclass','w_nounclass','w_plural','w_past'], true);
+  wireForm(exampleForm, 'e_submitted_by', 'e_msg', ['e_bra','e_eng','e_past','e_headword'], false);
+</script>
+</body>
+</html>

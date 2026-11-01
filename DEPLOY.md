@@ -89,3 +89,42 @@ confirm the environment variable is wired up the way you expect.
   wasn't found, the function likely isn't deployed -- confirm
   `netlify/functions/translate.js` actually made it into the repo (check on
   GitHub) and that Netlify's build log mentions detecting a function.
+
+## Community submissions -> GitHub (contribute.html)
+
+`/contribute.html` lets people add words and example sentences. The flow:
+
+1. Someone submits the form -> Netlify Forms stores it and filters spam.
+2. `netlify/functions/submission-created.js` runs automatically, writes the
+   entry to `submissions/words/` or `submissions/examples/` on a new branch,
+   and opens a **pull request** (only the form fields are written -- never the
+   submitter's IP or browser info).
+3. You review the PR on GitHub. Edit the JSON file in the PR to fix typos if
+   needed. **Merge** to accept, **Close** to reject.
+4. On merge, `.github/workflows/merge-submissions.yml` runs
+   `scripts/merge_submissions.py`, which adds the entry to `lexicon.json` /
+   `parallel_sentences.jsonl` (tagged `"source": "user_added"`), deletes the
+   submission file, and pushes. Netlify redeploys and the translator has it.
+
+### One-time setup
+
+1. **GitHub token**: github.com -> Settings -> Developer settings ->
+   Personal access tokens -> Fine-grained tokens -> Generate new token.
+   - Repository access: *Only select repositories* -> `bravanese-translator-app`
+   - Permissions: **Contents: Read and write**, **Pull requests: Read and write**
+2. **Netlify**: Site configuration -> Environment variables -> add
+   `GITHUB_TOKEN` = that token. Trigger a redeploy.
+3. **Netlify Forms**: Site configuration -> Forms -> make sure form detection
+   is enabled (the two forms `word-entries` and `example-entries` should
+   appear after the deploy).
+4. **GitHub Actions**: repo Settings -> Actions -> General -> Workflow
+   permissions -> select **Read and write permissions** -> Save.
+
+### Troubleshooting
+
+- No PR appeared: Netlify dashboard -> Logs -> Functions ->
+  `submission-created`. A 401/403 means the token or its permissions are
+  wrong. The submission is still safe under Forms either way.
+- Check Netlify's Forms -> "Spam submissions" tab if a real one got flagged.
+- To merge by hand: `python scripts/merge_submissions.py`, or run the
+  workflow from the Actions tab.
