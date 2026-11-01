@@ -99,12 +99,20 @@
     this.engToBraPartial = new Map();
     this.phraseBraToEng = new Map();
     this.phraseEngToBra = new Map();
+    this.userPhraseKeys = new Set();
   }
-  Index.prototype.addBra = function(key, gloss, note){
+  // Community submissions (source: "user_added") are reviewed by the site
+  // owner, so they take priority over the older dictionary data: they are
+  // indexed first (first match wins), tagged [community] in the prompt, and
+  // boosted when picking example sentences.
+  function isUser(x){ return !!x && x.source === 'user_added'; }
+  var USER_EXAMPLE_BOOST = 0.25;
+
+  Index.prototype.addBra = function(key, gloss, note, user){
     if (!key || !gloss) return;
-    if (!this.braToEng.has(key)) this.braToEng.set(key, {gloss:gloss, note:note});
+    if (!this.braToEng.has(key)) this.braToEng.set(key, {gloss:gloss, note:note, user:!!user});
   };
-  Index.prototype.addEng = function(gloss, braOriginal, note){
+  Index.prototype.addEng = function(gloss, braOriginal, note, user){
     var words = tokenize(gloss);
     var isSingle = words.length === 1;
     for (var i=0;i<words.length;i++){
@@ -113,26 +121,36 @@
       var map = isSingle ? this.engToBraExact : this.engToBraPartial;
       if (!map.has(w)) map.set(w, []);
       var arr = map.get(w);
-      if (!arr.some(function(e){ return e[0] === braOriginal; })) arr.push([braOriginal, note]);
+      if (!arr.some(function(e){ return e[0] === braOriginal; })) arr.push([braOriginal, note, !!user]);
     }
   };
-  Index.prototype.addPhrase = function(braOriginal, braAscii, english){
+  Index.prototype.addPhrase = function(braOriginal, braAscii, english, user){
     if (!braOriginal || !english) return;
     braAscii = braAscii || stripDiacritics(braOriginal);
     var engKey = english.toLowerCase().replace(/[^a-z0-9 ]/g,'').trim();
     var braKey = braAscii.toLowerCase().trim();
-    if (braKey && !this.phraseBraToEng.has(braKey)) this.phraseBraToEng.set(braKey, english);
-    if (engKey && !this.phraseEngToBra.has(engKey)) this.phraseEngToBra.set(engKey, braOriginal);
+    if (braKey && !this.phraseBraToEng.has(braKey)) {
+      this.phraseBraToEng.set(braKey, english);
+      if (user) this.userPhraseKeys.add('b:' + braKey);
+    }
+    if (engKey && !this.phraseEngToBra.has(engKey)) {
+      this.phraseEngToBra.set(engKey, braOriginal);
+      if (user) this.userPhraseKeys.add('e:' + engKey);
+    }
   };
   Index.prototype.build = function(lexicon, parallelRows){
+    // Community entries first, so they win any key they share with the dictionary.
+    lexicon = lexicon.filter(isUser).concat(lexicon.filter(function(e){ return !isUser(e); }));
+    parallelRows = parallelRows.filter(isUser).concat(parallelRows.filter(function(r){ return !isUser(r); }));
     for (var i=0;i<lexicon.length;i++){
       var e = lexicon[i];
+      var u = isUser(e);
       var headwordOriginal = e.headword_original || '';
       var headwordKey = normalizeKey(headwordOriginal);
       var gloss = cleanGloss(e.gloss || '');
-      if (headwordKey && gloss){ this.addBra(headwordKey, gloss, ''); this.addEng(gloss, headwordOriginal, ''); }
-      if (e.plural_form) this.addBra(normalizeKey(e.plural_form), gloss, '(plural)');
-      if (e.past_tense) this.addBra(normalizeKey(e.past_tense), gloss, '(past tense)');
+      if (headwordKey && gloss){ this.addBra(headwordKey, gloss, '', u); this.addEng(gloss, headwordOriginal, '', u); }
+      if (e.plural_form) this.addBra(normalizeKey(e.plural_form), gloss, '(plural)', u);
+      if (e.past_tense) this.addBra(normalizeKey(e.past_tense), gloss, '(past tense)', u);
       var rels = e.related_forms || [];
       for (var j=0;j<rels.length;j++){
         var rel = rels[j];
@@ -141,25 +159,32 @@
         var relGloss = cleanGloss(rel.gloss || '') || gloss;
         var deriv = rel.derivation || [];
         var note = deriv.length ? ('('+deriv.join('/')+')') : '';
-        if (relGloss) this.addBra(normalizeKey(form), relGloss, note);
-        if (rel.past_tense) this.addBra(normalizeKey(rel.past_tense), relGloss, '(past tense)');
+        if (relGloss) this.addBra(normalizeKey(form), relGloss, note, u);
+        if (rel.past_tense) this.addBra(normalizeKey(rel.past_tense), relGloss, '(past tense)', u);
       }
       var exs = e.examples || [];
-      for (var k=0;k<exs.length;k++) this.addPhrase(exs[k].bravanese_original, exs[k].bravanese_ascii, exs[k].english);
+      for (var k=0;k<exs.length;k++) this.addPhrase(exs[k].bravanese_original, exs[k].bravanese_ascii, exs[k].english, u);
     }
     for (var p=0;p<parallelRows.length;p++){
-      this.addPhrase(parallelRows[p].bravanese_original, parallelRows[p].bravanese_ascii, parallelRows[p].english);
+      var r = parallelRows[p];
+      this.addPhrase(r.bravanese_original, r.bravanese_ascii, r.english, isUser(r));
     }
   };
   Index.prototype.closestExamples = function(tokens, direction, n){
     var map = direction === 'b2e' ? this.phraseBraToEng : this.phraseEngToBra;
+    var prefix = direction === 'b2e' ? 'b:' : 'e:';
+    var userKeys = this.userPhraseKeys;
     var scored = [];
     var tokenSet = new Set(tokens);
     map.forEach(function(val, key){
       var keyTokens = tokenize(key);
       var overlap = 0;
       for (var i=0;i<keyTokens.length;i++) if (tokenSet.has(keyTokens[i])) overlap++;
-      if (overlap > 0) scored.push([overlap / Math.max(keyTokens.length, tokens.length), key, val]);
+      if (overlap > 0) {
+        var u = userKeys.has(prefix + key);
+        var score = overlap / Math.max(keyTokens.length, tokens.length) + (u ? USER_EXAMPLE_BOOST : 0);
+        scored.push([score, key, val, u]);
+      }
     });
     scored.sort(function(a,b){ return b[0]-a[0]; });
     return scored.slice(0, n);
@@ -172,7 +197,7 @@
     if (direction === 'b2e'){
       tokens.forEach(function(t){
         var hit = self.braToEng.get(normalizeKey(t));
-        if (hit) lexLines.push(t + ' = "' + hit.gloss + '" ' + hit.note);
+        if (hit) lexLines.push((hit.user ? '[community] ' : '') + t + ' = "' + hit.gloss + '" ' + hit.note);
         else unknown.push(t);
       });
     } else {
@@ -180,7 +205,7 @@
         if (STOPWORDS[t]) return;
         var hits = self.engToBraExact.get(t) || self.engToBraPartial.get(t);
         if (hits && hits.length){
-          var shown = hits.slice(0,3).map(function(h){ return h[0] + (h[1] ? ' '+h[1] : ''); });
+          var shown = hits.slice(0,3).map(function(h){ return (h[2] ? '[community] ' : '') + h[0] + (h[1] ? ' '+h[1] : ''); });
           lexLines.push(t + ' = ' + shown.join(' / '));
         } else unknown.push(t);
       });
@@ -266,6 +291,7 @@
     var promptParts = [];
     promptParts.push('You are a linguistic assistant helping translate ' + dirLabel + '.');
     promptParts.push('Use the dictionary matches and example sentences below as ground truth for vocabulary and grammar -- they come directly from a real Chimiini/Bravanese dictionary and corpus, retrieved specifically for this sentence.');
+    promptParts.push('Lines tagged [community] were contributed by Chimiini speakers and reviewed by the site owner. They are the most trusted source: when a [community] entry disagrees with an untagged dictionary entry or example, follow the [community] one.');
     promptParts.push('If a word in the input has no matching lexicon entry below, say so explicitly in your answer rather than inventing a translation for it.');
     promptParts.push('');
     promptParts.push('GRAMMAR BACKGROUND: ' + GRAMMAR_NOTES);
@@ -274,7 +300,7 @@
     promptParts.push(ctx.lexLines.length ? ctx.lexLines.join('\n') : '(none found)');
     if (ctx.unknown.length) promptParts.push('\nWords with NO dictionary match: ' + ctx.unknown.join(', '));
     promptParts.push('\nRELEVANT EXAMPLE SENTENCES from the corpus (for grammar/word-order reference):');
-    promptParts.push(ctx.examples.length ? ctx.examples.map(function(e){ return (e[1] + '  =  ' + e[2]); }).join('\n') : '(none found)');
+    promptParts.push(ctx.examples.length ? ctx.examples.map(function(e){ return (e[3] ? '[community] ' : '') + e[1] + '  =  ' + e[2]; }).join('\n') : '(none found)');
     promptParts.push('');
     promptParts.push('SENTENCE TO TRANSLATE: "' + sentence + '"');
     promptParts.push('');
