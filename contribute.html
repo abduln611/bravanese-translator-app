@@ -3,49 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Add Chimiini lexicon entries</title>
-<style>
-  :root { --ink:#EDE6D6; --navy:#16233B; --navy2:#0E1A2E; --gold:#C9A227; --gold-soft:#E4C767; --line:rgba(237,230,214,0.14); }
-  * { box-sizing: border-box; }
-  body { font-family: 'Iowan Old Style','Palatino Linotype',Georgia,serif; color:var(--ink); background:var(--navy2); margin:0; padding:2rem 1.25rem 3rem; }
-  h1, h2, h3 { font-family: Georgia, 'Iowan Old Style', serif; font-weight: 600; }
-  .wrap { max-width: 720px; margin: 0 auto; }
-  .eyebrow { font-family: system-ui, sans-serif; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-soft); margin-bottom: 0.4rem; }
-  h1 { font-size: 1.8rem; margin: 0 0 0.35rem; }
-  .sub { font-family: system-ui, sans-serif; font-size: 0.88rem; color: rgba(237,230,214,0.66); margin: 0 0 1.5rem; line-height: 1.5; }
-  .card { background: linear-gradient(180deg, rgba(237,230,214,0.05), rgba(237,230,214,0.02)); border: 1px solid var(--line); border-radius: 6px; padding: 1.25rem 1.35rem; margin-bottom: 1.1rem; }
-  .card h3 { font-size: 0.95rem; margin: 0 0 0.9rem; color: var(--gold-soft); }
-  label { display:block; font-family: system-ui, sans-serif; font-size: 0.82rem; color: rgba(237,230,214,0.75); margin: 0.7rem 0 0.3rem; }
-  label:first-child { margin-top: 0; }
-  input[type=text], select, textarea { width:100%; background: rgba(0,0,0,0.18); border: 1px solid var(--line); border-radius: 5px; color: var(--ink); font-family: Georgia, serif; font-size: 1rem; padding: 0.55rem 0.7rem; }
-  select { font-family: system-ui, sans-serif; font-size: 0.88rem; }
-  textarea { min-height: 60px; resize: vertical; }
-  input:focus, select:focus, textarea:focus, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
-  .row2 { display:grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
-  .checkrow { display:flex; align-items:center; gap: 0.5rem; margin-top: 0.9rem; font-family: system-ui, sans-serif; font-size: 0.85rem; color: rgba(237,230,214,0.8); }
-  .checkrow input { width: auto; }
-  .modetabs { display:flex; gap: 0.5rem; margin-bottom: 1rem; }
-  .modetab { flex:1; font-family: system-ui, sans-serif; font-size: 0.85rem; text-align:center; padding: 0.55rem 0.5rem; border: 1px solid var(--line); border-radius: 5px; cursor:pointer; background: transparent; color: rgba(237,230,214,0.7); }
-  .modetab.active { border-color: var(--gold); color: var(--gold-soft); background: rgba(201,162,39,0.1); }
-  button.primary { font-family: system-ui, sans-serif; font-size: 0.88rem; font-weight: 600; background: var(--gold); color: #241a04; border: none; border-radius: 5px; padding: 0.65rem 1.3rem; cursor: pointer; margin-top: 1rem; }
-  button.primary:disabled { opacity: 0.45; cursor: default; }
-  .msg { font-family: system-ui, sans-serif; font-size: 0.82rem; margin-top: 0.7rem; padding: 0.5rem 0.7rem; border-radius: 4px; display:none; }
-  .msg.ok { background: rgba(62,124,122,0.2); color: #8fd6d3; }
-  .msg.err { background: rgba(200,80,60,0.15); color: #e19b8f; }
-  .hint { font-family: system-ui, sans-serif; font-size: 0.76rem; color: rgba(237,230,214,0.5); margin-top: 0.4rem; line-height: 1.4; }
-</style>
+<title>Contribute &middot; Chimiini Translator</title>
+<meta name="description" content="Add Chimiini (Bravanese) words and example sentences to the dictionary.">
+<meta name="theme-color" content="#7ca4c6">
+<meta property="og:title" content="Contribute &middot; Chimiini Translator">
+<meta property="og:description" content="Add Chimiini (Bravanese) words and example sentences to the dictionary.">
+<meta property="og:image" content="/assets/chilaani-lighthouse.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-<div class="wrap">
-  <div class="eyebrow">Chimiini &middot; Bravanese</div>
-  <h1>Add lexicon entries</h1>
-  <p class="sub">Add new words or example sentences below. Each submission is sent to the site owner for review. Once approved, it&rsquo;s added to the lexicon and shows up in the <a href="/" style="color:var(--gold-soft)">translator</a> automatically.</p>
+<header class="topbar"><div class="inner">
+  <a class="brand" href="/">Chimiini <span>&middot; Bravanese</span></a>
+  <nav class="nav">
+    <a href="/" >Translate</a>
+    <a href="/contribute.html" aria-current="page">Contribute</a>
+  </nav>
+</div></header>
 
+<section class="hero">
+  <div class="inner">
+    <div class="hero-copy">
+      <p class="eyebrow">Contribute</p>
+      <h1>Add to the <em>dictionary.</em></h1>
+      <p class="lede">Share a word or an example sentence. Each one is reviewed, then added to the lexicon the translator uses.</p>
+    </div>
+  </div>
+  <img class="hero-photo" src="/assets/chilaani-lighthouse.jpg" width="400" height="300" alt="The Chilaani lighthouse standing on the shore at Barawa, Somalia, with old wooden pier posts in the sea">
+  <span class="hero-caption">Chilaani lighthouse, Barawa</span>
+</section>
+
+<main class="wrap">
   <div class="card">
+    <h2>New entry</h2>
     <label for="submitterName">Your name (optional, just for attribution)</label>
-    <input type="text" id="submitterName" placeholder="e.g. Najib">
+    <input type="text" id="submitterName" placeholder="e.g. Hamadi">
 
-    <div class="modetabs" style="margin-top:1rem;">
+    <div class="modetabs" role="group" aria-label="Entry type" style="margin-top:18px;">
       <button type="button" class="modetab active" id="modeWord">Add a word</button>
       <button type="button" class="modetab" id="modeExample">Add an example sentence</button>
     </div>
@@ -64,7 +60,7 @@
 
       <div class="checkrow">
         <input type="checkbox" name="is_infinitive_verb" id="w_isverb" value="true">
-        <label for="w_isverb" style="margin:0;">Is this a to-infinitive verb? (e.g. kuabirisata = 'to measure')</label>
+        <label for="w_isverb">Is this a to-infinitive verb? (e.g. kuabirisata = 'to measure')</label>
       </div>
 
       <div class="row2">
@@ -101,7 +97,7 @@
       <input type="text" name="past_tense" id="w_past" placeholder="leave blank if not applicable">
 
       <button type="submit" class="primary">Add word</button>
-      <div id="w_msg" class="msg"></div>
+      <div id="w_msg" class="msg" role="status"></div>
     </form>
 
     <!-- EXAMPLE FORM -->
@@ -124,10 +120,11 @@
       <div class="hint">Not validated here since this app doesn't have the full lexicon loaded -- it'll be matched to the lexicon entry when your submission is approved.</div>
 
       <button type="submit" class="primary">Add example</button>
-      <div id="e_msg" class="msg"></div>
+      <div id="e_msg" class="msg" role="status"></div>
     </form>
   </div>
-</div>
+</main>
+<footer>Every submission is reviewed before it&rsquo;s added. Thank you for helping preserve Chimiini.</footer>
 
 <script>
   var modeWord = document.getElementById('modeWord');
