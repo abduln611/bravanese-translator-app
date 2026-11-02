@@ -1,0 +1,19 @@
+# Render Blueprint: deploys the FastAPI service in api/.
+# Render clones the whole repo, so the API reads lexicon.json and
+# parallel_sentences.jsonl from the repo root and redeploys on every push.
+services:
+  - type: web
+    name: chimiini-translator-api
+    runtime: python
+    rootDir: api
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.7"
+      - key: ANTHROPIC_API_KEY
+        sync: false          # set the value in the Render dashboard
+      - key: ALLOWED_ORIGINS
+        value: https://barawatranslate.netlify.app,http://localhost:8081

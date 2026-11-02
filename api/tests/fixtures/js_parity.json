@@ -1,0 +1,1599 @@
+[
+ {
+  "direction": "b2e",
+  "sentence": "Dibii mbili haskali karka moro mooyi.",
+  "lexLines": [],
+  "unknown": [
+   "dibii",
+   "mbili",
+   "haskali",
+   "karka",
+   "moro",
+   "mooyi"
+  ],
+  "examples": [
+   {
+    "score": 1,
+    "source": "dibii mbili haskali karka moro mooyi.",
+    "target": "Two bulls do not dwell in the  same pen.’ (A proverb.)",
+    "community": false
+   },
+   {
+    "score": 0.2857142857142857,
+    "source": "ichiwekoowa schifanyoowa ichiwonowa mooyi yelushile mooyi izamiile.",
+    "target": "There were put (the pieces of wood), it was done, it was  seen that one floated and one sank.",
+    "community": false
+   },
+   {
+    "score": 0.16666666666666666,
+    "source": "dhe'ani haba mooyi",
+    "target": "a small amount of secretion",
+    "community": false
+   },
+   {
+    "score": 0.16666666666666666,
+    "source": "nimo karka dhana nafsiya fadhaaha",
+    "target": "[song] ‘I am (living) with suspicion, a disgrace for/to myself",
+    "community": false
+   },
+   {
+    "score": 0.16666666666666666,
+    "source": "khfanya wataano dhiddi ya mooyi",
+    "target": "to masturbate [lit. to make five  fingers) against one (the penis)]",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "b2e",
+  "sentence": "Sheekhi dorseta kuwa ra’iisi.",
+  "lexLines": [],
+  "unknown": [
+   "sheekhi",
+   "dorseta",
+   "kuwa",
+   "ra'iisi"
+  ],
+  "examples": [
+   {
+    "score": 1,
+    "source": "sheekhi dorseta kuwa ra'iisi.",
+    "target": "Sheekhi was elected president.’",
+    "community": false
+   },
+   {
+    "score": 0.75,
+    "source": "wamdorsete sheekhi kuwa ra'iisi",
+    "target": ". ‘They elected Sheekhi president.",
+    "community": false
+   },
+   {
+    "score": 0.25,
+    "source": "sheekhi dhakhiile kendra madrasaani.",
+    "target": "Sheekhi hurried to school.",
+    "community": false
+   },
+   {
+    "score": 0.25,
+    "source": "sheekhi chifa ha'iloowi itakudhikirishoowa",
+    "target": "[st.] ‘when the Sheikh  dies, no one should weep, instead people should recite",
+    "community": false
+   },
+   {
+    "score": 0.25,
+    "source": "watakendra ka sheekhi kulatana.",
+    "target": "They will go to the sheikh to divorce.",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "b2e",
+  "sentence": "chindrimu chisiita",
+  "lexLines": [],
+  "unknown": [
+   "chindrimu",
+   "chisiita"
+  ],
+  "examples": [
+   {
+    "score": 1,
+    "source": "chindrimu chisiita",
+    "target": "lime",
+    "community": false
+   },
+   {
+    "score": 0.5,
+    "source": "chindrimu chilada",
+    "target": "tangerine",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "b2e",
+  "sentence": "Komelopó chiwapa khabari kuwa dughaaghi fiile.",
+  "lexLines": [],
+  "unknown": [
+   "komelopo",
+   "chiwapa",
+   "khabari",
+   "kuwa",
+   "dughaaghi",
+   "fiile"
+  ],
+  "examples": [
+   {
+    "score": 1,
+    "source": "komelopo chiwapa khabari kuwa dughaaghi fiile.",
+    "target": "When he reached  them, he gave them the news that the beast had died.",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "dughaaghi waliko fiile.",
+    "target": "The beast was dead.",
+    "community": false
+   },
+   {
+    "score": 0.16666666666666666,
+    "source": "kuwa siimba bozele peesa siwo dhaahiri.",
+    "target": "That Siimba stole the money is not clear.",
+    "community": false
+   },
+   {
+    "score": 0.16666666666666666,
+    "source": "ni dhaahiri kuwa baana hatakuuya.",
+    "target": "It is clear that Baana won’t come.’ Or:",
+    "community": false
+   },
+   {
+    "score": 0.16666666666666666,
+    "source": "kuwa baana hatakuuya ni dhaahiri.",
+    "target": "That Baana won’t come is clear.",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "b2e",
+  "sentence": "Duniyaani kilaa iintu uwone ana s o uwone ana ni uso wa mojiitu.",
+  "lexLines": [],
+  "unknown": [
+   "duniyaani",
+   "kilaa",
+   "iintu",
+   "uwone",
+   "ana",
+   "s",
+   "o",
+   "uwone",
+   "ana",
+   "ni",
+   "uso",
+   "wa",
+   "mojiitu"
+  ],
+  "examples": [
+   {
+    "score": 0.9230769230769231,
+    "source": "duniyaani kilaa iinthu uwone ana s o uwone ana ni uso wa mojiitu.",
+    "target": "In this world everything is visible except it is not possible to see the face of God.",
+    "community": false
+   },
+   {
+    "score": 0.6153846153846154,
+    "source": "duniyaani kilaa iinthu uwone ana s o uwa uso wa mo iitu.",
+    "target": "In the world everything is visible except the face of God.’ (A proverb that counsels that in the world anything is possible, except seeing God’s face.) Or:",
+    "community": false
+   },
+   {
+    "score": 0.3269230769230769,
+    "source": "inaya ni",
+    "target": "my name is",
+    "community": true
+   },
+   {
+    "score": 0.2608695652173913,
+    "source": "waanthu wa o apo wa imaambila na fanyaayi we ni maana chihaba na jisaa we keelo inakoonyesha kuwaa we ni mana wa mataajiri.",
+    "target": "The people who were there they told him: why do you do it? You are a small boy and the way you look, it is showing that you are a son of rich people.",
+    "community": false
+   },
+   {
+    "score": 0.21428571428571427,
+    "source": "mkulu wa makhaadimu chimaambila ya kuwa ni ebu waana wa masultaani khfakata ka kaawo.",
+    "target": "The head of the servants told him that it was a disgrace for the children of sultans to run away from home.",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "b2e",
+  "sentence": "mbwa wa maduuri",
+  "lexLines": [],
+  "unknown": [
+   "mbwa",
+   "wa",
+   "maduuri"
+  ],
+  "examples": [
+   {
+    "score": 1,
+    "source": "mbwa wa maduuri",
+    "target": "a wild dog [lit. a dog of the bush]",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "mezi wa weelu",
+    "target": "moon",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "mana wa meenzawe",
+    "target": "child of his friend’ or",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "menza wa maanawe",
+    "target": "a friend of his child’ or",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "ndrani ya maduuri",
+    "target": "inside the forest",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "b2e",
+  "sentence": "Hamadi walishize shteko dhakh dhakh dhakh.",
+  "lexLines": [
+   "dhakh = \"ideo. of laughing\" ",
+   "dhakh = \"ideo. of laughing\" ",
+   "dhakh = \"ideo. of laughing\" "
+  ],
+  "unknown": [
+   "hamadi",
+   "walishize",
+   "shteko"
+  ],
+  "examples": [
+   {
+    "score": 1,
+    "source": "hamadi walishize shteko dhakh dhakh dhakh.",
+    "target": "Hamadi laughed",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "hamadi nakhteka shteko dhikh dhikh dhikh.",
+    "target": "Hamadi is laughing a lot,",
+    "community": false
+   },
+   {
+    "score": 0.18181818181818182,
+    "source": "*sindanu iyi ni sahali hamadi kuduriloowa.)yiikopi sindanu ya hamadi duriliila.",
+    "target": "Where is the needle that Hamadi  was pricked with?’ (Observe that   in   this example, MI did accept as grammatical the logical object as the subject of the passive instrumental applied verb. The explanation here would seem to be that the instrument does not overtly appear in the pseudo-relative clause. Compare, for instance, the ungrammaticality of",
+    "community": false
+   },
+   {
+    "score": 0.16666666666666666,
+    "source": "hamadi hamdhakhati muke.",
+    "target": "Hamadi does not take full care of his  wife.",
+    "community": false
+   },
+   {
+    "score": 0.16666666666666666,
+    "source": "ikoopa hamadi dhansatilile maayi.",
+    "target": "A cup, Hamadi used one to get water.",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "b2e",
+  "sentence": "Nakudhayisha mafta.",
+  "lexLines": [],
+  "unknown": [
+   "nakudhayisha",
+   "mafta"
+  ],
+  "examples": [
+   {
+    "score": 1,
+    "source": "nakudhayisha mafta.",
+    "target": "He is making the oil watery.",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "b2e",
+  "sentence": "kubiga chidhoonko",
+  "lexLines": [],
+  "unknown": [
+   "kubiga",
+   "chidhoonko"
+  ],
+  "examples": [
+   {
+    "score": 1,
+    "source": "kubiga chidhoonko",
+    "target": "to make a clicking sound",
+    "community": false
+   },
+   {
+    "score": 0.5,
+    "source": "kubiga dhulli",
+    "target": "to humiliate someone, despise someone",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "kubiga chidhoonko",
+    "target": "to make a clicking sound",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "b2e",
+  "sentence": "Omari dukaye huza zoombo ghaali kana dahabu.",
+  "lexLines": [],
+  "unknown": [
+   "omari",
+   "dukaye",
+   "huza",
+   "zoombo",
+   "ghaali",
+   "kana",
+   "dahabu"
+  ],
+  "examples": [
+   {
+    "score": 0.8571428571428571,
+    "source": "omari dukaye huza zoombo ghaali kana dhahabu.",
+    "target": "Omari’s  shop sells things as expensive as gold.",
+    "community": false
+   },
+   {
+    "score": 0.2857142857142857,
+    "source": "omari nakudherekeloowa kana suukari.",
+    "target": "Omari is being liked like  sugar.",
+    "community": false
+   },
+   {
+    "score": 0.2857142857142857,
+    "source": "nguwo izi ghaali kana dhahabu.",
+    "target": "These clothes are expensive  like gold.",
+    "community": false
+   },
+   {
+    "score": 0.2,
+    "source": "omari hudoodhata niingi. omari nakudodhata uwa a iye ntha poowa.",
+    "target": "Omari was  complaining that his rights were not given to him.",
+    "community": false
+   },
+   {
+    "score": 0.18181818181818182,
+    "source": "omari h-ooloka dukaa=ni kilaa m-uunthi. omari nakumera madukaani.",
+    "target": "Omari is going around the shops.",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "b2e",
+  "sentence": "Sikhaambila mi chiza kumdarawa muuntú.",
+  "lexLines": [],
+  "unknown": [
+   "sikhaambila",
+   "mi",
+   "chiza",
+   "kumdarawa",
+   "muuntu"
+  ],
+  "examples": [
+   {
+    "score": 0.8,
+    "source": "sikhaambila mi chiza kumdharawa muuntu.",
+    "target": "Did I not tell you not to look down on a person?",
+    "community": false
+   },
+   {
+    "score": 0.5,
+    "source": "sikhaambila mi chiza kumdharawa muuntu.",
+    "target": "Did I not tell you not to look down on a person?",
+    "community": false
+   },
+   {
+    "score": 0.2857142857142857,
+    "source": "chiza kiiwa siwo ebu chiza kuuza ndiyo.",
+    "target": "It is not shameful not to  know, it is shameful not to ask.’  (A proverb.)",
+    "community": false
+   },
+   {
+    "score": 0.2857142857142857,
+    "source": "mi takeendra mkhodiisho. mi sinakhsuula we keendra.",
+    "target": "I do not want you to go.",
+    "community": false
+   },
+   {
+    "score": 0.2857142857142857,
+    "source": "na teena sin'eete sihade kuwaa mi sikhaambila.",
+    "target": "And don’t ever blame me, don’t say that I did not tell you.’ (Morph. MI regularly elided the infinitive prefix ku when it precedes the second person singular object prefix, hence",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "b2e",
+  "sentence": "Omari upen a udulis a waantu.",
+  "lexLines": [],
+  "unknown": [
+   "omari",
+   "upen",
+   "a",
+   "udulis",
+   "a",
+   "waantu"
+  ],
+  "examples": [
+   {
+    "score": 0.6666666666666666,
+    "source": "omari upen a udhulis a waanthu.",
+    "target": "Omari likes to humiliate people.",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "haaruni upen a u'eta waanthu.",
+    "target": "Haaruni likes to blame (other) people (for things that happen).",
+    "community": false
+   },
+   {
+    "score": 0.3,
+    "source": "dughaaghi nta u a aa a wala ntakhtaharaka.",
+    "target": "The beast did not  move [his whole body] nor did he move [part of his body].",
+    "community": false
+   },
+   {
+    "score": 0.3,
+    "source": "omari hudoodhata niingi. omari nakudodhata uwa a iye ntha poowa.",
+    "target": "Omari was  complaining that his rights were not given to him.",
+    "community": false
+   },
+   {
+    "score": 0.25,
+    "source": "dughaaghi nta u a aa a wala ntakhtaharaka.",
+    "target": "The beast did not  move [his whole body] nor did he move [part of his body].",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "b2e",
+  "sentence": "=ye",
+  "lexLines": [],
+  "unknown": [
+   "ye"
+  ],
+  "examples": [
+   {
+    "score": 1,
+    "source": "=ye",
+    "target": "[cl.4]",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "ye epukililee mulo.",
+    "target": "He moved away from the fire.’)",
+    "community": false
+   },
+   {
+    "score": 0.25,
+    "source": "ye ni menye zibuuku.",
+    "target": "He is the owner of books.",
+    "community": false
+   },
+   {
+    "score": 0.25,
+    "source": "ye ndhoreele ntangu yuuzi.",
+    "target": "He stopped talking to me (as of)  yesterday.",
+    "community": false
+   },
+   {
+    "score": 0.25,
+    "source": "ye dhaatiye hatambuli chiintu.",
+    "target": "He, essentially, is not a bad person.",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "b2e",
+  "sentence": "dhibu na maradi kaawo iseegeme",
+  "lexLines": [
+   "dhibu = \"difficulty\" "
+  ],
+  "unknown": [
+   "na",
+   "maradi",
+   "kaawo",
+   "iseegeme"
+  ],
+  "examples": [
+   {
+    "score": 0.8,
+    "source": "dhibu na maradhi kaawo iseegeme",
+    "target": "[st.] ‘may troubles and sickness not reach  [lit. go near] thm",
+    "community": false
+   },
+   {
+    "score": 0.2857142857142857,
+    "source": "maali yamlasile na weenza na ahli wamlasile.",
+    "target": "Wealth left him, and friends and relatives left him (i.e. he lost his wealth and his friends and relatives).’ (Observe that the na which is co-ordinating  sentences does not trigger final accent on the first element of the  conjoined subject,",
+    "community": false
+   },
+   {
+    "score": 0.2857142857142857,
+    "source": "nuuru na suufi wa'epushilizenye waana na adhaabu.",
+    "target": "Nuuru and Suufi caused one anothe’s children to move away from (hell)fire.",
+    "community": false
+   },
+   {
+    "score": 0.25,
+    "source": "jaani nii dhibu khfanyowa mabsuuti. ndila yaa dhibu",
+    "target": "difficult road",
+    "community": false
+   },
+   {
+    "score": 0.2,
+    "source": "mzeele hudhahalatoowa na maana.",
+    "target": "A parent is inherited from by his  son.’ Or:",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "b2e",
+  "sentence": "Muke ndimi",
+  "lexLines": [
+   "[community] muke = \"TEST community gloss\" ",
+   "[community] ndimi = \"me\" "
+  ],
+  "unknown": [],
+  "examples": [
+   {
+    "score": 0.9166666666666666,
+    "source": "muke ndimi xyz",
+    "target": "TEST community example",
+    "community": true
+   },
+   {
+    "score": 0.5,
+    "source": "muke chimeegesha.",
+    "target": "The woman welcomed him.",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "hamadi hamdhakhati muke.",
+    "target": "Hamadi does not take full care of his  wife.",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "kingililaa muke dhuudhumu",
+    "target": "to rape a woman while she is sleeping",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "ndhukhisha ndimi meenziwo",
+    "target": "[song] ‘listen carefully to me, it is me your  fellow man",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "b2e",
+  "sentence": "inayo naani",
+  "lexLines": [],
+  "unknown": [
+   "inayo",
+   "naani"
+  ],
+  "examples": [
+   {
+    "score": 1.25,
+    "source": "inayo naani",
+    "target": "what is your name",
+    "community": true
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "meenzawe naani uyu.",
+    "target": "Is the friend of whom, this one? [lit. is his/her friend whom, this one?",
+    "community": false
+   },
+   {
+    "score": 0.25,
+    "source": "khamri inayo madhara miingi.",
+    "target": "Liquor has many harmful effects.",
+    "community": false
+   },
+   {
+    "score": 0.2,
+    "source": "ni menza wa naani uyu.",
+    "target": "Is the friend of whom, this one?’ Or: Ni",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "b2e",
+  "sentence": "kuzóola matunda",
+  "lexLines": [],
+  "unknown": [
+   "kuzoola",
+   "matunda"
+  ],
+  "examples": []
+ },
+ {
+  "direction": "b2e",
+  "sentence": "Ø-mbeene",
+  "lexLines": [],
+  "unknown": [
+   "mbeene"
+  ],
+  "examples": [
+   {
+    "score": 0.14285714285714285,
+    "source": "ka dhikirow mbeene paamba nelpe kana kartaasi",
+    "target": "at Dhikirow’s place I saw cotton as white as paper’ (from a popular  rhyme)",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "b2e",
+  "sentence": "ma-tunda (pl.) wake",
+  "lexLines": [],
+  "unknown": [
+   "ma",
+   "tunda",
+   "pl",
+   "wake"
+  ],
+  "examples": [
+   {
+    "score": 0.25,
+    "source": "ma eyo aya",
+    "target": "these",
+    "community": false
+   },
+   {
+    "score": 0.25,
+    "source": "wanthu (ma)dhaalimu",
+    "target": "wrongdoing people’ (cf.",
+    "community": false
+   },
+   {
+    "score": 0.25,
+    "source": "ndraani ma ndraani",
+    "target": "in and in",
+    "community": false
+   },
+   {
+    "score": 0.2,
+    "source": "basi enzele kalenthe ma uriini.",
+    "target": "So he went and sat down in the bush.",
+    "community": false
+   },
+   {
+    "score": 0.16666666666666666,
+    "source": "apa nthi nzimaye ma o aani.",
+    "target": "This entire country is (nothing but)  morons.",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "b2e",
+  "sentence": "xyzzy qqq",
+  "lexLines": [],
+  "unknown": [
+   "xyzzy",
+   "qqq"
+  ],
+  "examples": []
+ },
+ {
+  "direction": "b2e",
+  "sentence": "Jimatatu na Jimane",
+  "lexLines": [
+   "[community] jimatatu = \"Monday\" ",
+   "[community] jimane = \"Tuesday\" "
+  ],
+  "unknown": [
+   "na"
+  ],
+  "examples": [
+   {
+    "score": 0.3333333333333333,
+    "source": "n'ebishiza na saalimu.",
+    "target": "I was disgraced, shamed by Saalimu.’rel. nom.",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "elela na koodhi.",
+    "target": "He understood what was said.",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "ha'eleloowi na koodhi.",
+    "target": "He does not understand what was said.",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "nakelelowa na masoomo.",
+    "target": "He understands the lesson.’ (Syn: Observe the  rather unusual syntax here. The one who is coming to understand  the lesson is the subject of the passive verb and what is being  understood is the passive agent. An active sentence such as",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "maana na meenza",
+    "target": "a boy and a friend’;",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "b2e",
+  "sentence": "dhahamu",
+  "lexLines": [
+   "[community] dhahamu = \"TEST community override\" "
+  ],
+  "unknown": [],
+  "examples": [
+   {
+    "score": 0.3333333333333333,
+    "source": "dhahali ni dhahamu.",
+    "target": "Inheritance is chilling (i.e. a source of troubles, frustrations and the like).’ (A proverb.)",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "e2b",
+  "sentence": "His complaints have no end.’ (A proverbial saying.)",
+  "lexLines": [],
+  "unknown": [
+   "his",
+   "complaints",
+   "have",
+   "no",
+   "end",
+   "proverbial",
+   "saying"
+  ],
+  "examples": [
+   {
+    "score": 1,
+    "source": "his complaints have no end a proverbial saying",
+    "target": "Doodize hazimali.",
+    "community": false
+   },
+   {
+    "score": 0.375,
+    "source": "everyone know his own sins a saying",
+    "target": "Kilaa muuntu na’iwa ðambize.",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "to have a dream lit to see a dreamdreams",
+    "target": "kuwona ndrooto",
+    "community": false
+   },
+   {
+    "score": 0.3076923076923077,
+    "source": "instead of being without a  government a bad one is better a saying",
+    "target": "Kana dobla la’aani eeri oblaa mbovu.",
+    "community": false
+   },
+   {
+    "score": 0.3,
+    "source": "a good intention cures a bad intention spoils a proverb",
+    "target": "Ni suura tu.) Niya njeema hutabiiba niyaa mbovu hukhariba.",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "e2b",
+  "sentence": "He went into his room.",
+  "lexLines": [],
+  "unknown": [
+   "he",
+   "went",
+   "into",
+   "his",
+   "room"
+  ],
+  "examples": [
+   {
+    "score": 1,
+    "source": "he went into his room",
+    "target": "Chingila ndraani kaake mtanaani.",
+    "community": false
+   },
+   {
+    "score": 0.42857142857142855,
+    "source": "as he went he took that knife",
+    "target": "Jisaa ye cheendró shtaloo chisu icho.",
+    "community": false
+   },
+   {
+    "score": 0.4,
+    "source": "he admitted his guilt",
+    "target": "Khirile ðambize.",
+    "community": false
+   },
+   {
+    "score": 0.4,
+    "source": "his room",
+    "target": "mtaanawe",
+    "community": false
+   },
+   {
+    "score": 0.4,
+    "source": "he called his companions",
+    "target": "Chiwavila weenziwe.",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "e2b",
+  "sentence": ". ‘I bought",
+  "lexLines": [],
+  "unknown": [
+   "i",
+   "bought"
+  ],
+  "examples": [
+   {
+    "score": 1,
+    "source": "i bought",
+    "target": "Nuzile dira’a za Dubáy",
+    "community": false
+   },
+   {
+    "score": 0.5,
+    "source": "i myself",
+    "target": "mi ðaatiye",
+    "community": false
+   },
+   {
+    "score": 0.5,
+    "source": "she bought",
+    "target": "Uzile dira’a za Dubáy.",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "i dozed off",
+    "target": "Ningile ndrewuuní.",
+    "community": false
+   },
+   {
+    "score": 0.2857142857142857,
+    "source": "i bought a cows head for one",
+    "target": "Nuzilee chittá ka riyaali mooyi na riyaaliyé ni’iweshelé ilu ya chileembache chitaani.",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "e2b",
+  "sentence": "He goes away leaving this  fox to watch the child.",
+  "lexLines": [
+   "away = [community] epukana",
+   "this = ee"
+  ],
+  "unknown": [
+   "he",
+   "goes",
+   "leaving",
+   "fox",
+   "watch",
+   "child"
+  ],
+  "examples": [
+   {
+    "score": 1,
+    "source": "he goes away leaving this  fox to watch the child",
+    "target": "Humlata dul’eda uyu kumlindra maana.",
+    "community": false
+   },
+   {
+    "score": 0.55,
+    "source": "he moved the child away from the fire he induced persuaded etc the child to move away from the fire",
+    "target": "mepushize maana naa mulo.",
+    "community": false
+   },
+   {
+    "score": 0.5,
+    "source": "mukhtaari had  the child hurry to go to the market",
+    "target": "Mukhtaari mdhakhishize maana kendra sukhuuni.",
+    "community": false
+   },
+   {
+    "score": 0.5,
+    "source": "nureeni caused the child to  stop talking to the teacher",
+    "target": "Nureeni mdhoresheze maana maalimu.",
+    "community": false
+   },
+   {
+    "score": 0.5,
+    "source": "he moved the child away from the fire",
+    "target": "mepile maana naa mulo.",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "e2b",
+  "sentence": "The boil, infected wound is  stinging like a needle [i.e. like being pricked by a needle].",
+  "lexLines": [
+   "wound = chi-dhoondha (zi-)",
+   "like = ða’iifu (ma-)",
+   "like = ða’iifu (ma-)"
+  ],
+  "unknown": [
+   "boil",
+   "infected",
+   "stinging",
+   "needle",
+   "i",
+   "e",
+   "being",
+   "pricked",
+   "by",
+   "needle"
+  ],
+  "examples": [
+   {
+    "score": 0.8823529411764706,
+    "source": "the boil infected wound is  stinging like a needle ie like being pricked by a needle",
+    "target": "Ipu inakundura kana sindaano.",
+    "community": false
+   },
+   {
+    "score": 0.4117647058823529,
+    "source": "the one who knows the defect of a corpse is the washer of the corpse a proverb",
+    "target": "Ebu ya mayti hiiwó mosha mayti.",
+    "community": false
+   },
+   {
+    "score": 0.35294117647058826,
+    "source": "the infected wound boil etc is  producing a lot of secretion",
+    "target": "Ipu inakulawa dhee’aani niingi.",
+    "community": false
+   },
+   {
+    "score": 0.35294117647058826,
+    "source": "the child pricked the teacher on the arm with a needle",
+    "target": "maana mdurile maalimu mkono ka siindano.",
+    "community": false
+   },
+   {
+    "score": 0.3088235294117647,
+    "source": "what is your name",
+    "target": "inayo naani",
+    "community": true
+   }
+  ]
+ },
+ {
+  "direction": "e2b",
+  "sentence": "Can you stay awake the whole  night through?",
+  "lexLines": [
+   "stay = [community] epukana / ku-dhafarata",
+   "awake = ku-dhafarata / dhafari",
+   "night = ku-dhafarata / dhafari"
+  ],
+  "unknown": [
+   "can",
+   "you",
+   "whole",
+   "through"
+  ],
+  "examples": [
+   {
+    "score": 1,
+    "source": "can you stay awake the whole  night through",
+    "target": "Takhaadira masku ayá kudhafaratá?",
+    "community": false
+   },
+   {
+    "score": 0.375,
+    "source": "not sleeping the whole night is killing me",
+    "target": "Dhafari inakunubla.",
+    "community": false
+   },
+   {
+    "score": 0.375,
+    "source": "oh mister you the soothsayer told the truth",
+    "target": "E we bwaana we kaahini koðele lila.",
+    "community": false
+   },
+   {
+    "score": 0.375,
+    "source": "the owner of the camel asked the traveller",
+    "target": "menye ngamiila chimuza msaafiri.",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "we use coffee to stay awake all night long",
+    "target": "Si hudhafaratila kahawa.",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "e2b",
+  "sentence": "The one who cannot take of a wife is one who could be her father (lit. who gives birth to her).’ (A proverb that conveys the idea that poor provider for his wife is someone much older than her, old enough to be her father.)",
+  "lexLines": [
+   "one = ðaalimu (Ø, ma-)",
+   "who = ðaalimu (Ø, ma-) / ðaamini (ma-)",
+   "one = ðaalimu (Ø, ma-)",
+   "who = ðaalimu (Ø, ma-) / ðaamini (ma-)",
+   "who = ðaalimu (Ø, ma-) / ðaamini (ma-)",
+   "that = chi-dhu (zi-) / ch-eepuwe",
+   "that = chi-dhu (zi-) / ch-eepuwe",
+   "for = ku-dherekela / dhum dhum / ðaamini (ma-)",
+   "someone = ða’iifu (ma-) / ku-’eeta",
+   "old = ða’iifu (ma-)"
+  ],
+  "unknown": [
+   "cannot",
+   "take",
+   "wife",
+   "could",
+   "her",
+   "father",
+   "gives",
+   "birth",
+   "her",
+   "proverb",
+   "conveys",
+   "idea",
+   "poor",
+   "provider",
+   "his",
+   "wife",
+   "much",
+   "older",
+   "than",
+   "her",
+   "enough",
+   "her",
+   "father"
+  ],
+  "examples": [
+   {
+    "score": 1,
+    "source": "the one who cannot take of a wife is one who could be her father lit who gives birth to her a proverb that conveys the idea that poor provider for his wife is someone much older than her old enough to be her father",
+    "target": "Muke humdhakató ni muuntu umzaaló.",
+    "community": false
+   },
+   {
+    "score": 0.41509433962264153,
+    "source": "the reason for people following the dead child from behind in the funeral procession is that it is said that the child is innocent and does not need people to pray to god for foregiveness for him rather it is wanted that the child pray to god for the people to be forgiven",
+    "target": "Sababu yua waantu uras o maytí ya maaná ka chinumé huhadoowa kuwa maana hata haaji kulombelowaa u’a ntaná ismu ya dambi bal ba husulowaa ye ulombela waantu u’a na maghfirá.",
+    "community": false
+   },
+   {
+    "score": 0.3695652173913043,
+    "source": "a dhow does not move without the  wind a proverb which communicates the idea that everything  has a cause it is also used to refer to a rumor if there is a rumor  there is likely some truth to it where theres smoke theres a fire",
+    "target": "Jahazi haydhakhaakhi bilaa lpepo.",
+    "community": false
+   },
+   {
+    "score": 0.35294117647058826,
+    "source": "the subject of the infinitive verb we noted above that the instrument and not the logical object should be the subject of a passive constructed from an instrumental applied verb however the sentence below shows that if the instrument is not present in the clause then it is possi ble for the logical object to be the passive subject there seems to be a different problem then with",
+    "target": "Hamadi",
+    "community": false
+   },
+   {
+    "score": 0.3404255319148936,
+    "source": "the sect of shaafii does  not prevent the followers of this school from keeping dogs for this  reason people who farm raise dogs and consider them to be among  the animals that are trustworthy and able for the house to be  entrusted to them to protect it",
+    "target": "Maðhabu ya Shaafi’i hayreebi warasha maðhabu iyi kudhakhalataa mbwa ka jis’iyo wantu walima miyuundra hukorshaa mbwa na hisaabata mbwa kuwa ni karka daaba haminikó na hukhadirowa kaminilowa nuumba.",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "e2b",
+  "sentence": "They do whatever the government wants, if these things that they do will harm them or harm their relatives or others.",
+  "lexLines": [
+   "things = dhuugu",
+   "that = chi-dhu (zi-) / ch-eepuwe",
+   "harm = ku-dhiba / ma-ðara / ðuri",
+   "harm = ku-dhiba / ma-ðara / ðuri"
+  ],
+  "unknown": [
+   "they",
+   "do",
+   "whatever",
+   "government",
+   "wants",
+   "if",
+   "these",
+   "they",
+   "do",
+   "will",
+   "them",
+   "their",
+   "relatives",
+   "others"
+  ],
+  "examples": [
+   {
+    "score": 1,
+    "source": "they do whatever the government wants if these things that they do will harm them or harm their relatives or others",
+    "target": "Wo hufaanya kulla ya sarkaali nakhsuuló ichiwa zintu izo zaa wo watakhfaanyó stakuwadhibaa wo amó stakuwadhiba ahli yaawo amó wiinginé.",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "because of the kindness that the  boy had shown them the soldiers let him alone they went to the  sultan and told him that that did not see the boy",
+    "target": "Ka khisa zeema za maana wafanyiizó askari wachimlata wachendra ka sultaani wachimaambila kuwaa wo ntawa(ku)mona maana.",
+    "community": false
+   },
+   {
+    "score": 0.2857142857142857,
+    "source": "if the weather had remained the way that it was they  would have been able to walk the thirteen miles that remained for  them to reach ten dipo",
+    "target": "Hawa kayiwa idumile jisaa yo iwaalikó wo sula kuwa wakhadiriile inen ra meli i umi naa ntatu ziwali o ziwasaliló khkoma Ten Dipo",
+    "community": false
+   },
+   {
+    "score": 0.28,
+    "source": "the first  portion belongs to god the secone belongs to the sultan the third belongs to the fish so that they may live in it",
+    "target": "Ifungu ya kaandra kuwa nda majiitu ya piili kuwa nda sultaani ya taatu kuwa ndaa nsi zinapate ku’iisha katiike.",
+    "community": false
+   },
+   {
+    "score": 0.25806451612903225,
+    "source": "on the  morning of the second day ie the next day abunawaasi  explained to the sultan and his ministers the events that he had seen  at the house of the arab",
+    "target": "Fijiri ya sku ya piili Abunawaasi chimeleza sultaani na waziiriwé khabari zaa ye weenó ka maarabú numbaaní.",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "e2b",
+  "sentence": "So, pray for me that God send me in peace and bring me back in peace.",
+  "lexLines": [
+   "pray = ku-ðikirisha",
+   "for = ku-dherekela / dhum dhum / ðaamini (ma-)",
+   "that = chi-dhu (zi-) / ch-eepuwe",
+   "bring = ku-dhuda"
+  ],
+  "unknown": [
+   "so",
+   "me",
+   "god",
+   "send",
+   "me",
+   "peace",
+   "me",
+   "back",
+   "peace"
+  ],
+  "examples": [
+   {
+    "score": 1,
+    "source": "so pray for me that god send me in peace and bring me back in peace",
+    "target": "Basi ndrombelaani majiitu nampeleke ka salaama na ndhude ka salaama.",
+    "community": false
+   },
+   {
+    "score": 0.25,
+    "source": "give me some  men and let them go and bring my box",
+    "target": "Mpa waantu wana’endre wanalete sanduukhuya.",
+    "community": false
+   },
+   {
+    "score": 0.25,
+    "source": "if anyone comes to look for me tell him that  i went for a stroll",
+    "target": "Chiya muuntu meepe kunmeera maambile kuwaa mi noloshele kinendra’ineendrá.",
+    "community": false
+   },
+   {
+    "score": 0.25,
+    "source": "so you  must look for a good woman for me who will please you",
+    "target": "Basi we menewe mmerelaa muke meema natakhu’ajibó.",
+    "community": false
+   },
+   {
+    "score": 0.24528301886792453,
+    "source": "the reason for people following the dead child from behind in the funeral procession is that it is said that the child is innocent and does not need people to pray to god for foregiveness for him rather it is wanted that the child pray to god for the people to be forgiven",
+    "target": "Sababu yua waantu uras o maytí ya maaná ka chinumé huhadoowa kuwa maana hata haaji kulombelowaa u’a ntaná ismu ya dambi bal ba husulowaa ye ulombela waantu u’a na maghfirá.",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "e2b",
+  "sentence": "[st.] ‘I implore God to obliterate my sins/ may God pardon my sins",
+  "lexLines": [],
+  "unknown": [
+   "st",
+   "i",
+   "implore",
+   "god",
+   "obliterate",
+   "my",
+   "sins",
+   "may",
+   "god",
+   "pardon",
+   "my",
+   "sins"
+  ],
+  "examples": [
+   {
+    "score": 1,
+    "source": "st i implore god to obliterate my sins may god pardon my sins",
+    "target": "huloomba Mooja kun’aafu ðambi kughafiriloowa",
+    "community": false
+   },
+   {
+    "score": 0.3269230769230769,
+    "source": "my name is",
+    "target": "inaya ni",
+    "community": true
+   },
+   {
+    "score": 0.3076923076923077,
+    "source": "perhaps i will win and may add to my wealth",
+    "target": "Heendra nkashiindrá nkazida maaliyá.",
+    "community": false
+   },
+   {
+    "score": 0.3076923076923077,
+    "source": "i swam to duude lit i went to duude by  swimming",
+    "target": "Noloshele Duudé ka koowelá.",
+    "community": false
+   },
+   {
+    "score": 0.23076923076923078,
+    "source": "to want desire st like life soul  ie to desire something very passionately",
+    "target": "kudherekelakamba ruuhu",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "e2b",
+  "sentence": "And it became clear to you that there is no God.",
+  "lexLines": [
+   "clear = ðaahiri",
+   "that = chi-dhu (zi-) / ch-eepuwe",
+   "there = ðaruura"
+  ],
+  "unknown": [
+   "became",
+   "you",
+   "no",
+   "god"
+  ],
+  "examples": [
+   {
+    "score": 1,
+    "source": "and it became clear to you that there is no god",
+    "target": "Na ikhuðihirikiliile ya kuwa ntaku majiitu.",
+    "community": false
+   },
+   {
+    "score": 0.45454545454545453,
+    "source": "it is clear that you are crazy",
+    "target": "Ni ðaahiri kuwaa we nayo ijiiní.",
+    "community": false
+   },
+   {
+    "score": 0.45454545454545453,
+    "source": "it is possible that it was hasani who went to mogadishu",
+    "target": "Heendra kuwa Hasani enzelo Mkhodiishó.",
+    "community": false
+   },
+   {
+    "score": 0.4166666666666667,
+    "source": "today there is no sleeping all night long  because it is the",
+    "target": "Leelo ni dhafari ni idul fitri.",
+    "community": false
+   },
+   {
+    "score": 0.4,
+    "source": "it is not shameful not to  know it is shameful not to ask  a proverb",
+    "target": "Chiza kiiwa siwo ebu chiza kuuza ndiyó.",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "e2b",
+  "sentence": "his taking measurements",
+  "lexLines": [],
+  "unknown": [
+   "his",
+   "taking",
+   "measurements"
+  ],
+  "examples": [
+   {
+    "score": 1,
+    "source": "his taking measurements",
+    "target": "ku’abirsatake",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "and his",
+    "target": "riyaali",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "his friend",
+    "target": "meenzawe",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "his room",
+    "target": "mtaanawe",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "his age",
+    "target": "umriwe",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "e2b",
+  "sentence": "He exposed the government’s lies, deceptions, etc.",
+  "lexLines": [],
+  "unknown": [
+   "he",
+   "exposed",
+   "government",
+   "lies",
+   "deceptions",
+   "etc"
+  ],
+  "examples": [
+   {
+    "score": 0.75,
+    "source": "he exposed the governments lies deceptions etc",
+    "target": "Ebishize sarkaali.",
+    "community": false
+   },
+   {
+    "score": 0.375,
+    "source": "he is sucking out the juice of the",
+    "target": "Nakhsonda madheeyo.",
+    "community": false
+   },
+   {
+    "score": 0.375,
+    "source": "he had the child look after the house",
+    "target": "Mdhoresheze maana nuumba.",
+    "community": false
+   },
+   {
+    "score": 0.375,
+    "source": "he painted the house the color white",
+    "target": "Pashile nuumba ranji nelpe.",
+    "community": false
+   },
+   {
+    "score": 0.375,
+    "source": "the owner of the camel asked the traveller",
+    "target": "menye ngamiila chimuza msaafiri.",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "e2b",
+  "sentence": "What is your name?",
+  "lexLines": [],
+  "unknown": [
+   "what",
+   "your",
+   "name"
+  ],
+  "examples": [
+   {
+    "score": 1.25,
+    "source": "what is your name",
+    "target": "inayo naani",
+    "community": true
+   },
+   {
+    "score": 0.75,
+    "source": "my name is",
+    "target": "inaya ni",
+    "community": true
+   },
+   {
+    "score": 0.375,
+    "source": "what is hurting the child is his  stomach",
+    "target": "Inamdhibo maaná ni miimba.",
+    "community": false
+   },
+   {
+    "score": 0.25,
+    "source": "this cow is skinny",
+    "target": "Ngombe uyu ni dhakhaayo.",
+    "community": false
+   },
+   {
+    "score": 0.25,
+    "source": "hamadi is being hurried",
+    "target": "Hamadi nakudhararoowa.",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "e2b",
+  "sentence": "The woman boiled water",
+  "lexLines": [
+   "water = ku-dhaansata"
+  ],
+  "unknown": [
+   "woman",
+   "boiled"
+  ],
+  "examples": [
+   {
+    "score": 0.5,
+    "source": "the woman returned his",
+    "target": "Muke chimrudila riyaaliye.",
+    "community": false
+   },
+   {
+    "score": 0.5,
+    "source": "the woman welcomed him",
+    "target": "Muke chimeegesha.",
+    "community": false
+   },
+   {
+    "score": 0.5,
+    "source": "the sailor helped the woman swim",
+    "target": "Bahaariya melushizee muke.",
+    "community": false
+   },
+   {
+    "score": 0.42857142857142855,
+    "source": "then the boy welcomed the old woman",
+    "target": "Chimaliza maana chimegesha chizeele.",
+    "community": false
+   },
+   {
+    "score": 0.4,
+    "source": "after the prayer on the",
+    "target": "Ba’adi yaa sala kula mooyi humlazima kendra kuzura wazaaziwe ahliye na weenzawé.",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "e2b",
+  "sentence": "Monday and Tuesday",
+  "lexLines": [
+   "monday = [community] Jimatatu",
+   "tuesday = [community] Jimane"
+  ],
+  "unknown": [],
+  "examples": [
+   {
+    "score": 0.3333333333333333,
+    "source": "and his",
+    "target": "riyaali",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "and",
+    "target": "[pemél]",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "go and eat",
+    "target": "Endrá ja.",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "go and sleep",
+    "target": "Endrá laala.",
+    "community": false
+   },
+   {
+    "score": 0.3333333333333333,
+    "source": "get up and go and bathe",
+    "target": "Ondroka endrá owá.",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "e2b",
+  "sentence": "the of and",
+  "lexLines": [],
+  "unknown": [],
+  "examples": [
+   {
+    "score": 0.5,
+    "source": "the owner of the camel asked the traveller",
+    "target": "menye ngamiila chimuza msaafiri.",
+    "community": false
+   },
+   {
+    "score": 0.42857142857142855,
+    "source": "old simsini called the boy the owner of the ship and the boy came",
+    "target": "Mzele Simsini chimvila maana menye markabu maana chiya.",
+    "community": false
+   },
+   {
+    "score": 0.4,
+    "source": "and  spitting out the remains",
+    "target": "madheeyo",
+    "community": false
+   },
+   {
+    "score": 0.4,
+    "source": "the price of a gazelle",
+    "target": "khima ya eelo",
+    "community": false
+   },
+   {
+    "score": 0.4,
+    "source": "after the prayer on the",
+    "target": "Ba’adi yaa sala kula mooyi humlazima kendra kuzura wazaaziwe ahliye na weenzawé.",
+    "community": false
+   }
+  ]
+ },
+ {
+  "direction": "e2b",
+  "sentence": "xyzzy",
+  "lexLines": [],
+  "unknown": [
+   "xyzzy"
+  ],
+  "examples": []
+ }
+]
